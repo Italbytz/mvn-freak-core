@@ -98,4 +98,8 @@ public interface ScheduleInterface extends GenerationEventSource,
     Set getAllModules();
 
     FreakGraphModelInterface getGraphModel();
+
+    Object[] getPossibleEventSources();
+
+    FreakGraphModelInterface getFreakGraphModel();
 }
