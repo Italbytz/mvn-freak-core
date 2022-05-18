@@ -17,7 +17,7 @@ import freak.core.control.ScheduleInterface;
  * @author Michael, Dirk
  */
 public class FreakMath {
-	
+	public static final int NO_ELEMENT = -1;
 	/**
 	 * Returns k different numbers in {0, ..., n-1}.
 	 * 
@@ -48,7 +48,7 @@ public class FreakMath {
 	}
 
 	
-	public static int[][] getKDisjointSetsOfNNumbersExcludeH(Schedule schedule, int k, int n,int h) {
+	public static int[][] getKDisjointSetsOfNNumbersExcludeH(ScheduleInterface schedule, int k, int n,int h) {
 		/*
 		 * Array of 0,0,0,0,0 interpreted as 0,1,2,3,4,5,...,n-1
 		 * each new entry will be saved as value+1
@@ -85,7 +85,7 @@ public class FreakMath {
 	 * @param k the number of sets to divide into.
 	 * @param n defines the range {0, ..., n-1}.
 	 */
-	public static int[][] getKDisjointSetsOfNNumbers(Schedule schedule, int k, int n) {
+	public static int[][] getKDisjointSetsOfNNumbers(ScheduleInterface schedule, int k, int n) {
 		return FreakMath.getKDisjointSetsOfNNumbersExcludeH(schedule, k, n, 0);
 	}
 	

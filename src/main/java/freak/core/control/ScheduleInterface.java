@@ -4,6 +4,8 @@ import edu.cornell.lassp.houle.RngPack.RandomElement;
 import freak.core.event.*;
 import freak.core.fitness.FitnessFunction;
 import freak.core.mapper.Mapper;
+import freak.core.observer.ObserverManagerInterface;
+import freak.core.populationmanager.PopulationManager;
 import freak.core.searchspace.SearchSpace;
 
 import java.io.Serializable;
@@ -45,4 +47,16 @@ public interface ScheduleInterface extends GenerationEventSource,
     void skip();
 
     boolean isCurrentRunFinished();
+
+    ObserverManagerInterface getObserverManager();
+
+    int getCurrentBatch();
+
+    int getCurrentRun();
+
+    void callInitialize();
+
+    PopulationManager getPopulationManager();
+
+    FitnessFunction getRealFitnessFunction();
 }

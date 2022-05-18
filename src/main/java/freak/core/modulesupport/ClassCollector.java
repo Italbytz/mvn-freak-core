@@ -375,7 +375,7 @@ public class ClassCollector {
 		if (startedFrom==null) {
 		     try
 	         {
-		    	 Class qc = freak.Freak.class;
+		    	 Class qc = ClassCollector.class;
 		    	 CodeSource source = qc.getProtectionDomain().getCodeSource();
 		    	 if ( source != null ) startedFrom = source.getLocation().toURI().toString().substring(5);
 	         }
