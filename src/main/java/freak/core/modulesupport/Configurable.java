@@ -6,8 +6,6 @@
 
 package freak.core.modulesupport;
 
-import freak.core.modulesupport.inspector.InspectorInterface;
-
 /**
  * This interface contains two methods which are used for
  * displaying and editing the state of modules in the GUI.
@@ -15,13 +13,6 @@ import freak.core.modulesupport.inspector.InspectorInterface;
  * @author Kai, Stefan
  */
 public interface Configurable extends Module {
-
-	/**
-	 * Returns an inspector for editing properties of the Object.
-	 * 
-	 * @return the inspector.
-	 */
-	public InspectorInterface getInspector();
 
 	/**
 	 * Returns the current configuration of the object implementing this

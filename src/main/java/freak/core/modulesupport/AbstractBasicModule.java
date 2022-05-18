@@ -12,8 +12,6 @@ import freak.core.event.GenerationEvent;
 import freak.core.event.IndividualListEvent;
 import freak.core.event.RunEvent;
 import freak.core.event.ScheduleEvent;
-import freak.core.modulesupport.inspector.InspectorFactoryInterface;
-import freak.core.modulesupport.inspector.InspectorInterface;
 
 /**
  * The most basic superclass for all modules. Provides standard implementations
@@ -23,12 +21,6 @@ import freak.core.modulesupport.inspector.InspectorInterface;
  */
 public abstract class AbstractBasicModule implements Module {
 
-	private InspectorFactoryInterface standardInspectorFactory;
-	
-	public InspectorInterface getInspector() {
-		return standardInspectorFactory.getStandardInspectorFor(this);
-	}
-	
 	public Configuration getConfiguration() {
 		return Configuration.getConfigurationFor(this);
 	}
@@ -76,7 +68,4 @@ public abstract class AbstractBasicModule implements Module {
 		return getName();
 	}
 
-	public void setStandardInspectorFactory(InspectorFactoryInterface standardInspectorFactory) {
-		this.standardInspectorFactory = standardInspectorFactory;
-	}
 }
