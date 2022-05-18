@@ -3,16 +3,16 @@ plugins {
 }
 
 group 'org.example'
-version '0.2.6'
+version '0.2.7'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.jdom:jdom:1.1'
+    implementation 'jdom:jdom:b9'
     implementation 'colt:colt:1.0.3'
-    implementation 'bsh:bsh:2.0b1'
+    implementation 'bsh:bsh:2.0b4'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
