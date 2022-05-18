@@ -3,10 +3,14 @@ package freak.core.control;
 import edu.cornell.lassp.houle.RngPack.RandomElement;
 import freak.core.event.*;
 import freak.core.fitness.FitnessFunction;
+import freak.core.graph.FreakGraphModelInterface;
+import freak.core.graph.Initialization;
+import freak.core.graph.OperatorGraph;
 import freak.core.mapper.Mapper;
 import freak.core.observer.ObserverManagerInterface;
 import freak.core.populationmanager.PopulationManager;
 import freak.core.searchspace.SearchSpace;
+import freak.core.stoppingcriterion.StoppingCriterion;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -63,4 +67,24 @@ public interface ScheduleInterface extends GenerationEventSource,
     void modulesEdited();
 
     double getRunTime();
+
+    Batch getDefaultBatch();
+
+    Initialization getInitialization();
+
+    OperatorGraph getOperatorGraph();
+
+    StoppingCriterion[] getStoppingCriteria();
+
+    Batch createBatchFromCurrentConfigurations();
+
+    void setDefaultBatch(Batch batch);
+
+    void setGraphModel(FreakGraphModelInterface graphModel);
+
+    void setFitnessFunction(FitnessFunction function);
+
+    void setMapper(Mapper mapper);
+
+    void setPhenotypeSearchSpace(SearchSpace space);
 }
