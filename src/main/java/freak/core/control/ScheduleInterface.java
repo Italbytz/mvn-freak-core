@@ -59,4 +59,8 @@ public interface ScheduleInterface extends GenerationEventSource,
     PopulationManager getPopulationManager();
 
     FitnessFunction getRealFitnessFunction();
+
+    void modulesEdited();
+
+    double getRunTime();
 }
