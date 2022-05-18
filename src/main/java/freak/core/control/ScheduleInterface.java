@@ -14,6 +14,7 @@ import freak.core.stoppingcriterion.StoppingCriterion;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Set;
 
 public interface ScheduleInterface extends GenerationEventSource,
         RunEventSource,
@@ -87,4 +88,12 @@ public interface ScheduleInterface extends GenerationEventSource,
     void setMapper(Mapper mapper);
 
     void setPhenotypeSearchSpace(SearchSpace space);
+
+    void setPopulationManager(PopulationManager manager);
+
+    void setStoppingCriteria(StoppingCriterion[] criteria);
+
+    void setInitialization(Initialization initialization);
+
+    Set getAllModules();
 }
