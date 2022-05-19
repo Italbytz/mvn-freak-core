@@ -1,9 +1,16 @@
 plugins {
-    id 'java'
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
 }
 
-group 'org.example'
+group 'io.github.italbytz'
 version '0.2.9'
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
 
 repositories {
     mavenCentral()
@@ -21,3 +28,53 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+publishing {
+
+    publications {
+        mavenJava(MavenPublication) {
+            pom {
+                name = 'freak-core'
+                description = 'Core library of the Free Evolutionary Algorithm Toolkit'
+                url = 'https://github.com/Italbytz/mvn-freak-core'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        name 'Robin Nunkesser'
+                        email 'robin.nunkesser@hshl.de'
+                    }
+                }
+                scm {
+                    connection 'scm:git:git://github.com/Italbytz/mvn-freak-core.git'
+                    developerConnection 'scm:git:ssh://github.com/Italbytz/mvn-freak-core.git'
+                    url 'https://github.com/Italbytz/mvn-freak-core.git'
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name="oss"
+            def releasesRepoUrl = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+            def snapshotsRepoUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            credentials {
+                username = ossrhUsername
+                password = ossrhPassword
+            }
+        }
+    }
+
+}
+
+signing {
+    sign configurations.archives
+}
+
+
