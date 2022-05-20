@@ -39,7 +39,6 @@ public interface PopulationManager extends Module, IndividualListEventSource {
 	/**
 	 * Creates new generation's population.
 	 * 
-	 * @return the new population.
 	 * @throws GraphException if an error within the graph occurs.
 	 */
 	public void createNewGeneration() throws GraphException;

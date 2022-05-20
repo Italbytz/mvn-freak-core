@@ -57,7 +57,7 @@ public abstract class AbstractParameterController extends AbstractBasicModule im
 	/**
 	 * Initializes the maps and sets the attribute schedule.
 	 * 
-	 * @param schedule the schedule
+	 * @param opGraph the schedule
 	 */	
 	public AbstractParameterController(OperatorGraph opGraph) {
 		this.opGraph = opGraph;

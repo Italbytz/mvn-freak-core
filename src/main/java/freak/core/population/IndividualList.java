@@ -78,7 +78,7 @@ public interface IndividualList extends Serializable, Cloneable {
 	/**
 	 * Counts the number of individuals equal to the specified individual.
 	 *
-	 * @param the individual to which the equal individuals are to be counted.
+	 * @param individual to which the equal individuals are to be counted.
 	 * @return the number of individuals equal to the specified individual.
 	 */
 	public int getIndividualMultiplicity(Individual individual);
@@ -141,7 +141,7 @@ public interface IndividualList extends Serializable, Cloneable {
 	 * Searches for the first occurence of the specified individual using the
 	 * <code>equals</code> method.
 	 *
-	 * @param an individual.
+	 * @param individual
 	 * @return the index of the first occurence of the specified individual; returns <code>-1</code> if the individual is not found.
 	 */
 	public int indexOf(Individual individual);

@@ -386,7 +386,7 @@ public class OperatorGraph extends AbstractModule implements Configurable, Sched
 	 * Connects sourcePort and targetPort.
 	 * @param sourcePort
 	 * @param targetPort
-	 * @throws AlreadyConnectedException, PortConnectException
+	 * @throws PortConnectException
 	 */
 	public void connect(Port sourcePort, Port targetPort) throws PortConnectException {
 		if (sourcePort instanceof OutPort && targetPort instanceof InPort) {

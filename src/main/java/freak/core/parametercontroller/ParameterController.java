@@ -62,12 +62,12 @@ public interface ParameterController extends Module {
 	 * 
 	 * @param paraName the name of the parameter whose value controls the property
 	 * @param operator the operator which should be controlled
-	 * @param the property which should be controlled
+	 * @param genotype which should be controlled
 	 * @throws RuntimeException when there is no Property with the given name in the given operator
 	 * @throws RuntimeException when the types of the Parameter and the Property are not equal
 	 * 
 	 */
-	public abstract void setPropertyForParameter(String paraName, Operator operator, String propName) throws RuntimeException;
+	public abstract void setPropertyForParameter(String paraName, Operator operator, String genotype) throws RuntimeException;
 
 	/**
 	 * Returns the Class object representing the type of Parameter with the given name.

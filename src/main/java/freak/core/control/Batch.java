@@ -72,7 +72,7 @@ public class Batch implements Serializable {
 	 * Sets the number of runs for which this Batch should be active. The runs
 	 * will have the same configuration, but may differ in random values.
 	 * 
-	 * @param runs must be > 0
+	 * @param runs must be greater than 0
 	 */
 	public void setRuns(int runs) {
 		if (runs < 1)

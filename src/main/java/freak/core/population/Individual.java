@@ -66,7 +66,6 @@ public class Individual implements Cloneable, Serializable {
 	private Genotype genotype;
 	
 	/**
-	 * genotype -> mapper -> phenotype
 	 * This is for caching only.
 	 */
 	private Genotype phenotype;

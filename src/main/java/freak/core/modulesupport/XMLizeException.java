@@ -7,7 +7,7 @@
 package freak.core.modulesupport;
 
 /**
- * Is thrown whenever an error during Object->XML or XML->Object transformation occurs.
+ * Is thrown whenever an error during Object to XML or XML to Object transformation occurs.
  *  
  * @author Matthias
  */

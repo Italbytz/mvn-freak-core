@@ -81,14 +81,12 @@ public interface Observer extends Module {
 	/**
 	 * Returns the measure the observer works with.
 	 * @return  the measure of the observer, either <code>GENERATIONS</code>  or <code>RUNS</code> or the default value, <code>UNKNOWN</code>.
-	 * @uml.property  name="measure"
 	 */
 	public int getMeasure();
 
 	/**
 	 * Sets the measure of the observer.
 	 * @param measure  the measure of the observer.
-	 * @uml.property  name="measure"
 	 */
 	public void setMeasure(int measure);
 

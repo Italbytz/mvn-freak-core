@@ -16,7 +16,6 @@ public interface ViewInterface {
     /**
      * Sets the observer this view is associated with. May be <code>null</code>.
      * @param observer  the view's observer.
-     * @uml.property  name="observer"
      */
     public void setObserver(Observer observer);
 
