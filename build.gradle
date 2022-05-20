@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'io.github.italbytz'
-version '0.3.0'
+version '0.3.1'
 
 java {
     withJavadocJar()
@@ -19,7 +19,7 @@ repositories {
 dependencies {
     implementation 'jdom:jdom:b9'
     implementation 'colt:colt:1.0.3'
-    implementation 'bsh:bsh:2.0b4'
+    implementation 'org.apache-extras.beanshell:bsh:2.0b6'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
