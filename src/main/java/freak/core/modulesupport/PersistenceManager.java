@@ -6,7 +6,6 @@
 
 package freak.core.modulesupport;
 
-import java.awt.*;
 import java.io.*;
 import java.lang.reflect.*;
 import java.util.*;
@@ -519,75 +518,6 @@ public class PersistenceManager {
 		}
 	}
 
-	public static class ColorPersistenceHandler implements ClassPersistenceHandler {
-		public ColorPersistenceHandler(PersistenceManager pm) {
-		}
-
-		public Element toXML(Object o) {
-			Color c = (Color)o;
-			Element result = new Element("Color");
-			result.setAttribute("red", c.getRed() + "");
-			result.setAttribute("green", c.getGreen() + "");
-			result.setAttribute("blue", c.getBlue() + "");
-			return result;
-		}
-
-		public Object fromXML(Element e) throws DataConversionException {
-			int red = e.getAttribute("red").getIntValue();
-			int green = e.getAttribute("green").getIntValue();
-			int blue = e.getAttribute("blue").getIntValue();
-			Color c = new Color(red, green, blue);
-			return c;
-		}
-
-		public Class handles() {
-			return Color.class;
-		}
-	}
-
-	public static class PointPersistenceHandler implements ClassPersistenceHandler {
-		public PointPersistenceHandler(PersistenceManager pm) {
-		}
-
-		public Element toXML(Object o) {
-			Point point = (Point)o;
-			Element result = new Element("Point");
-			result.setAttribute("x", point.x + "");
-			result.setAttribute("y", point.y + "");
-			return result;
-		}
-
-		public Object fromXML(Element e) throws DataConversionException {
-			return new Point(e.getAttribute("x").getIntValue(), e.getAttribute("y").getIntValue());
-		}
-
-		public Class handles() {
-			return Point.class;
-		}
-	}
-
-	public static class RectanglePersistenceHandler implements ClassPersistenceHandler {
-		public RectanglePersistenceHandler(PersistenceManager pm) {
-		}
-
-		public Element toXML(Object o) {
-			Rectangle rect = (Rectangle)o;
-			Element result = new Element("Rectangle");
-			result.setAttribute("height", rect.height + "");
-			result.setAttribute("width", rect.width + "");
-			result.setAttribute("x", rect.x + "");
-			result.setAttribute("y", rect.y + "");
-			return result;
-		}
-
-		public Object fromXML(Element e) throws DataConversionException {
-			return new Rectangle(e.getAttribute("x").getIntValue(), e.getAttribute("y").getIntValue(), e.getAttribute("width").getIntValue(), e.getAttribute("height").getIntValue());
-		}
-
-		public Class handles() {
-			return Rectangle.class;
-		}
-	}
 	public static class ListPersistenceHandler implements ClassPersistenceHandler {
 		private PersistenceManager pm = null;
 
