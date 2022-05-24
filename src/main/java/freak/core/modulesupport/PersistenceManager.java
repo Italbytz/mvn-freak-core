@@ -6,17 +6,17 @@
 
 package freak.core.modulesupport;
 
+import java.awt.*;
 import java.io.*;
 import java.lang.reflect.*;
 import java.util.*;
 import java.util.List;
-
+import javax.swing.border.*;
 import org.jdom.*;
 
 /**
  * EXPERIMENTAL...
- * 
- * @author Matthias
+ * @author  Matthias
  */
 public class PersistenceManager {
 
@@ -30,7 +30,7 @@ public class PersistenceManager {
 	private static Class[] allHandlers = ClassCollector.getAllImplementors(ClassPersistenceHandler.class);
 
 	/**
-	 * Does nothing but indirectly triggers the collection of PersistenceHandlers. 
+	 * Does nothing but indirectly triggers the collection of PersistenceHandlers.
 	 * @see PersistenceManager#allHandlers
 	 */
 	public static void init() {
@@ -61,7 +61,7 @@ public class PersistenceManager {
 			return cph;
 		}
 
-		// Arrays are treated seperately.		
+		// Arrays are treated seperately.
 		if (c.isArray()) {
 			return arrayHandler;
 		}
@@ -102,10 +102,10 @@ public class PersistenceManager {
 		}
 		return (ClassPersistenceHandler)classHandler.get(handledList.get(0));
 	}
-	
+
 	/**
 	 * Generates a XML-element represnting the <code>Object</code> o.
-	 * @param o the object to transform. 
+	 * @param o the object to transform.
 	 * @return the generated XML-element.
 	 * @throws XMLizeException if the conversion failed.
 	 */
@@ -119,7 +119,7 @@ public class PersistenceManager {
 	/**
 	 * Generates a XML-element represnting the <code>Object</code> o.
 	 * @param o the object to transform.
-	 * @param forcedType the type to which the object is downcasted before the generation starts. 
+	 * @param forcedType the type to which the object is downcasted before the generation starts.
 	 * @return the generated XML-element.
 	 * @throws XMLizeException if the conversion failed.
 	 */
@@ -158,8 +158,8 @@ public class PersistenceManager {
 	}
 
 	/**
-	 * Generates an <code>Object</code> based on the informations in the XML-element <code>e</code>. 
-	 * @param e a XML-element which represents an object. 
+	 * Generates an <code>Object</code> based on the informations in the XML-element <code>e</code>.
+	 * @param e a XML-element which represents an object.
 	 * @return the generated object.
 	 * @throws XMLizeException if the generation fails.
 	 */
@@ -283,7 +283,7 @@ public class PersistenceManager {
 			// ... and we already have encountered an Element with a name equal to e.getName()...
 			if (map.containsKey(e.getName())) {
 				// ... and the "element name"<->"handler" mapping wasn't unique in the past or is no longer unique if take
-				// the cuurent element into account ... 
+				// the cuurent element into account ...
 				if (map.get(e.getName()) == null || !((String)map.get(e.getName())).equals(e.getAttributeValue("handler"))) {
 					// ... mark the "element name" as not unique mappable to an handler
 					map.put(e.getName(), null);
@@ -518,6 +518,99 @@ public class PersistenceManager {
 		}
 	}
 
+	public static class ColorPersistenceHandler implements ClassPersistenceHandler {
+		public ColorPersistenceHandler(PersistenceManager pm) {
+		}
+
+		public Element toXML(Object o) {
+			Color c = (Color)o;
+			Element result = new Element("Color");
+			result.setAttribute("red", c.getRed() + "");
+			result.setAttribute("green", c.getGreen() + "");
+			result.setAttribute("blue", c.getBlue() + "");
+			return result;
+		}
+
+		public Object fromXML(Element e) throws DataConversionException {
+			int red = e.getAttribute("red").getIntValue();
+			int green = e.getAttribute("green").getIntValue();
+			int blue = e.getAttribute("blue").getIntValue();
+			Color c = new Color(red, green, blue);
+			return c;
+		}
+
+		public Class handles() {
+			return Color.class;
+		}
+	}
+
+	public static class BevelBorderPersistenceHandler implements ClassPersistenceHandler {
+		public BevelBorderPersistenceHandler(PersistenceManager pm) {
+		}
+
+		public Element toXML(Object o) {
+			BevelBorder border = (BevelBorder)o;
+			Element result = new Element("BevelBorder");
+			result.setAttribute("bevelType", border.getBevelType() + "");
+			// there are more attributes but the one above is sufficient for us
+			return result;
+		}
+
+		public Object fromXML(Element e) throws DataConversionException {
+			return new BevelBorder(e.getAttribute("bevelType").getIntValue());
+		}
+
+		public Class handles() {
+			return BevelBorder.class;
+		}
+	}
+
+	public static class PointPersistenceHandler implements ClassPersistenceHandler {
+		public PointPersistenceHandler(PersistenceManager pm) {
+		}
+
+		public Element toXML(Object o) {
+			Point point = (Point)o;
+			Element result = new Element("Point");
+			result.setAttribute("x", point.x + "");
+			result.setAttribute("y", point.y + "");
+			return result;
+		}
+
+		public Object fromXML(Element e) throws DataConversionException {
+			return new Point(e.getAttribute("x").getIntValue(), e.getAttribute("y").getIntValue());
+		}
+
+		public Class handles() {
+			return Point.class;
+		}
+	}
+
+	public static class RectanglePersistenceHandler implements ClassPersistenceHandler {
+		public RectanglePersistenceHandler(PersistenceManager pm) {
+		}
+
+		public Element toXML(Object o) {
+			Rectangle rect = (Rectangle)o;
+			Element result = new Element("Rectangle");
+			result.setAttribute("height", rect.height + "");
+			result.setAttribute("width", rect.width + "");
+			result.setAttribute("x", rect.x + "");
+			result.setAttribute("y", rect.y + "");
+			return result;
+		}
+
+		public Object fromXML(Element e) throws DataConversionException {
+			return new Rectangle(e.getAttribute("x").getIntValue(), e.getAttribute("y").getIntValue(), e.getAttribute("width").getIntValue(), e.getAttribute("height").getIntValue());
+		}
+
+		public Class handles() {
+			return Rectangle.class;
+		}
+	}
+	/**
+	 * @author  nunkesser
+	 */
 	public static class ListPersistenceHandler implements ClassPersistenceHandler {
 		private PersistenceManager pm = null;
 
@@ -587,7 +680,7 @@ public class PersistenceManager {
 			return Map.class;
 		}
 	}
-	
+
 	public static class ArrayPersistenceHandler implements ClassPersistenceHandler {
 
 		private PersistenceManager pm;
