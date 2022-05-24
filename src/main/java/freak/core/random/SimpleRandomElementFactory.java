@@ -20,10 +20,25 @@ public class SimpleRandomElementFactory implements RandomElementFactory {
 	}
 
 	public SimpleRandomElementFactory(int masterSeed) {
-		seedGenerator = new MersenneTwister(masterSeed);
+		seedGenerator = new MersenneRandomElement(masterSeed);
 	}
 
 	public RandomElement getRandomElement() {
-		return new MersenneTwister(seedGenerator.choose(Integer.MIN_VALUE, Integer.MAX_VALUE));
+		return new MersenneRandomElement(seedGenerator.choose(Integer.MIN_VALUE, Integer.MAX_VALUE));
 	}
+
+	private class MersenneRandomElement extends RandomElement {
+
+		RandomEngine engine;
+
+		public MersenneRandomElement(int masterSeed) {
+			engine = new MersenneTwister(masterSeed);
+		}
+
+		@Override
+		public double raw() {
+			return engine.raw();
+		}
+	}
+
 }

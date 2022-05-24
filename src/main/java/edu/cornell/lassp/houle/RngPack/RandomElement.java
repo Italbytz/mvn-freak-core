@@ -22,8 +22,6 @@ import java.util.*;
  * @author <A HREF="http://www.msc.cornell.edu/~houle"> Paul Houle </A> (E-mail: <A HREF="mailto:houle@msc.cornell.edu">houle@msc.cornell.edu</A>)
  * @version 1.0
  *
- * @see RandomJava
- * @see RandomShuffle
  */
 
 public abstract class RandomElement extends Object {
@@ -33,9 +31,7 @@ public abstract class RandomElement extends Object {
     /**
      * The abstract method that must be defined to make a working RandomElement.
      * See the class <CODE>RandomJava</CODE> for an example of how to do this.
-     *
-     * @see RandomJava
-     *
+     **
      * @return a random double in the range [0,1]
      */
 
