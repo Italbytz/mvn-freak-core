@@ -210,9 +210,9 @@ public class Configuration implements Serializable {
 
 	public static class ConfigurationPersistenceHandler
 		implements ClassPersistenceHandler {
-		private PersistenceManagerInterface pm = null;
+		private PersistenceManager pm = null;
 
-		public ConfigurationPersistenceHandler(PersistenceManagerInterface pm) {
+		public ConfigurationPersistenceHandler(PersistenceManager pm) {
 			this.pm = pm;
 		}
 
@@ -244,9 +244,9 @@ public class Configuration implements Serializable {
 
 	public static class PropertyWrapperPersistenceHandler
 		implements ClassPersistenceHandler {
-		private PersistenceManagerInterface pm = null;
+		private PersistenceManager pm = null;
 
-		public PropertyWrapperPersistenceHandler(PersistenceManagerInterface pm) {
+		public PropertyWrapperPersistenceHandler(PersistenceManager pm) {
 			this.pm = pm;
 		}
 
