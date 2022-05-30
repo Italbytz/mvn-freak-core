@@ -9,6 +9,8 @@ package freak.core.random;
 import cern.jet.random.engine.*;
 import edu.cornell.lassp.houle.RngPack.*;
 
+import java.io.Serializable;
+
 /**
  * @author Stefan
  */
@@ -27,7 +29,8 @@ public class SimpleRandomElementFactory implements RandomElementFactory {
 		return new MersenneRandomElement(seedGenerator.choose(Integer.MIN_VALUE, Integer.MAX_VALUE));
 	}
 
-	private class MersenneRandomElement extends RandomElement {
+	private class MersenneRandomElement extends RandomElement implements
+			Serializable {
 
 		RandomEngine engine;
 
