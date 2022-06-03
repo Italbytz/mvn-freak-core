@@ -40,7 +40,7 @@ import java.util.Vector;
  *
  *  For Framework users:
  *  You can insert you own bar entries by register each entry
- *  at the static method <tt>addBarEntry</tt>.<br>
+ *  at the static method addBarEntry.<br>
  *  <br>
  *  Example:
  *  <pre>

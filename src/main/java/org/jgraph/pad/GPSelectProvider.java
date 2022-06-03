@@ -34,7 +34,7 @@ import java.awt.event.WindowEvent;
  *
  * If only one graph model provider is available the
  * show method returns directly and the method
- * <tt>getSelectedGraphModelProvider</tt> returns
+ * getSelectedGraphModelProvider returns
  * this graph model provider. Otherwise
  * the dialog was shown and the user can select
  * one graph model.
@@ -141,7 +141,7 @@ public class GPSelectProvider extends JDialog {
 
 	/** Renderer class for the graph model provider objects.
 	 *  The renderer uses the method
-	 *  <tt>getPresentationName</tt> from the
+	 *  getPresentationName from the
 	 *  graph model provider for the
 	 *  visible text.
 	 *

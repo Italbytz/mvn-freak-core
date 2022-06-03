@@ -941,7 +941,7 @@ public class SugiyamaLayoutAlgorithm implements LayoutAlgorithm {
 		return movements;
 	}
 
-	/**@param  toRight <tt>true</tt> = try to move the currentWrapper to right; <tt>false</tt> = try to move the currentWrapper to left;
+	/**@param  toRight true = try to move the currentWrapper to right; false  try to move the currentWrapper to left;
 	 * @param  currentLevel Vector which contains the CellWrappers for the current level
 	 * @param  currentIndexInTheLevel
 	 * @param  currentPriority

@@ -38,16 +38,16 @@ package freak.core.util;
  */
 public class Base64 {
 
-	/** Specify encoding (value is <tt>true</tt>). */
+	/** Specify encoding (value is true). */
 	public final static boolean ENCODE = true;
 
-	/** Specify decoding (value is <tt>false</tt>). */
+	/** Specify decoding (value is false). */
 	public final static boolean DECODE = false;
 
-	/** Specify that data should be compressed (value is <tt>true</tt>). */
+	/** Specify that data should be compressed (value is true). */
 	public final static boolean COMPRESS = true;
 
-	/** Specify that data should not be compressed (value is <tt>false</tt>). */
+	/** Specify that data should not be compressed (value is false). */
 	public final static boolean DONT_COMPRESS = false;
 
 	/** Maximum line length (76) of Base64 output. */
@@ -193,7 +193,7 @@ public class Base64 {
 	 * Serializes an object and returns the Base64-encoded
 	 * version of that serialized object. If the object
 	 * cannot be serialized or there is another error,
-	 * the method will return <tt>null</tt>.
+	 * the method will return null.
 	 *
 	 * @param serializableObject The object to encode
 	 * @return The Base64-encoded object
@@ -207,7 +207,7 @@ public class Base64 {
 	 * Serializes an object and returns the Base64-encoded
 	 * version of that serialized object. If the object
 	 * cannot be serialized or there is another error,
-	 * the method will return <tt>null</tt>.
+	 * the method will return null.
 	 *
 	 * @param serializableObject The object to encode
 	 * @param breakLines Break lines at 80 characters or less.
@@ -358,7 +358,7 @@ public class Base64 {
 	 *
 	 * @param file The file to read
 	 * @param encode Whether or not to encode file as it is read.
-	 * @return The encoded/decoded file or <tt>null</tt> if there was an error.
+	 * @return The encoded/decoded file or null if there was an error.
 	 * @since 1.4
 	 */
 	public static byte[] readFile(String file, boolean encode) {
@@ -370,7 +370,7 @@ public class Base64 {
 	 *
 	 * @param file The file to read
 	 * @param encode Whether or not to encode file as it is read.
-	 * @return The encoded/decoded file or <tt>null</tt> if there was an error.
+	 * @return The encoded/decoded file or null if there was an error.
 	 * @since 1.4
 	 */
 	public static byte[] readFile(java.io.File file, boolean encode) {
@@ -479,11 +479,11 @@ public class Base64 {
 
 	/**
 	 * Simple helper method that Base64-encodes a file
-	 * and returns the encoded string or <tt>null</tt>
+	 * and returns the encoded string or null
 	 * if there was an error.
 	 *
 	 * @param rawfile The file to read
-	 * @return The encoded file or <tt>null</tt> if there was an error.
+	 * @return The encoded file or null if there was an error.
 	 * @since 1.4
 	 */
 	public static String encodeFromFile(String rawfile) {
@@ -494,11 +494,11 @@ public class Base64 {
 
 	/**
 	 * Simple helper method that Base64-decodes a file
-	 * and returns the decoded data or <tt>null</tt>
+	 * and returns the decoded data or null
 	 * if there was an error.
 	 *
 	 * @param encfile The file to read
-	 * @return The decoded file or <tt>null</tt> if there was an error.
+	 * @return The decoded file or null if there was an error.
 	 * @since 1.4
 	 */
 	public static byte[] decodeFromFile(String encfile) {

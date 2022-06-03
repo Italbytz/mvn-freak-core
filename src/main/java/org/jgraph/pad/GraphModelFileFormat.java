@@ -66,7 +66,7 @@ public interface GraphModelFileFormat {
 
 	/** Gets a accessory component for the
 	 *  JFileChooser. If the return value is
-	 *  <tt>null</tt> no accessory will show.
+	 *  null no accessory will show.
 	 *  The component was used while the write operation.
 	 *
 	 */

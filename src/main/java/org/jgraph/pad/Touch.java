@@ -32,7 +32,7 @@ public class Touch implements Runnable {
 
 	// ............
 
-	/** Constructor with a supplied TGPanel <tt>tgp</tt>.
+	/** Constructor with a supplied TGPanel tgp.
 	  */
 	public Touch(GPGraph graph) {
 		this.graph = graph;

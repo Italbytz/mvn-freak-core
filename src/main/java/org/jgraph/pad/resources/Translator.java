@@ -26,7 +26,7 @@ import java.util.*;
 /** Contains ResourceBundle objects.
  *  The first (deepest) bundle is the Graphpad bundle.
  *  If a user wants to use Graphpad as a framework
- *  he can push his own bundle with the <tt>pushBundle</tt>
+ *  he can push his own bundle with the pushBundle
  *  method. Requests will procedure with the following
  *  logic: The translator asks the highest bundle
  *  for a localized text string. If the bundle has
@@ -48,7 +48,7 @@ public class Translator {
 
 	/** The translator creates outputs on the
 	 *  System.err if a resource wasn't found and
-	 *  this boolean is <tt>true</tt>
+	 *  this boolean is true
 	 */
 	protected static boolean logNotFoundResources = false;
 

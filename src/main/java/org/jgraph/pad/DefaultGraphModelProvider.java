@@ -45,7 +45,7 @@ public class DefaultGraphModelProvider implements GraphModelProvider {
 		defaultGraphModelFileFormatXML = new DefaultGraphModelFileFormatXML();
 	}
 
-	/**Returns <tt>Default Graph Model</tt>
+	/**Returns Default Graph Model
 	 *
 	 * @see GraphModelProvider#getPresentationName()
 	 */

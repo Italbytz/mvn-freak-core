@@ -155,12 +155,12 @@ public interface GraphModelProvider {
 	 */
 	public boolean isMutateAbleTo(Class otherGraphModelClass);
 
-	/** The graph model <tt>sourceGraphModel</tt> is a corresponding
-	 *  graph model for this provider. The <tt>otherGraphModelClass</tt>
+	/** The graph model sourceGraphModel is a corresponding
+	 *  graph model for this provider. The otherGraphModelClass
 	 *  specifies another graph model. This method converts the
 	 *  source graph model to a graph model like the class parameter
 	 *  specifies. The new instance, witch is corresponding
-	 *  with the <tt>otherGraphModelClass</tt> parameter,
+	 *  with the otherGraphModelClass parameter,
 	 *  is the return value.
 	 *
 	 *  @param sourceGraphModel A graph model from this provider.

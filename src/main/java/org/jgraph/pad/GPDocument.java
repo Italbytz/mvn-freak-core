@@ -86,7 +86,7 @@ public class GPDocument
 	protected ModelExportImpl exportModel;
 
 	/** The overview Dialog for this document.
-	 *  Can be <tt>null</tt>.
+	 *  Can be null.
 	 *
 	 */
 	protected JDialog overviewDialog;

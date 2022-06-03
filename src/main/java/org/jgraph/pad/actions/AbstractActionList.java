@@ -172,7 +172,7 @@ public abstract class AbstractActionList extends AbstractActionDefault {
 	 *  (buttonEdge.g. for the MenuItem)
 	 *
 	 *  The default Implemenation returns
-	 *  <tt>item.toString()</tt>
+	 *  item.toString()
 	 *
 	 */
 	protected String getItemPresentationText(Object item) {

@@ -48,7 +48,7 @@ public abstract class AbstractActionFile extends AbstractActionDefault {
 
 	/** Opens a dialog and return the filename.
 	 *
-	 *  Returns <tt>null</tt> if cancelled.
+	 *  Returns null if cancelled.
 	 * */
 	protected String dialog(
 		String message,

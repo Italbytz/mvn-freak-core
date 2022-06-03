@@ -116,7 +116,7 @@ public class GraphModelProviderRegistry {
 	 *  at the file format class.
 	 *  
 	 *  @see GraphModelFileFormat
-	 *  @return the GraphModelProvider or <tt>null</tt> 
+	 *  @return the GraphModelProvider or null
 	 * 	if no GraphModelProvider was found.
 	 */
 	public static GraphModelProvider getGraphModelProvider(String filename) {
@@ -131,7 +131,7 @@ public class GraphModelProviderRegistry {
 	 *  at the file format class.
 	 *  
 	 *  @see GraphModelFileFormat
-	 *  @return the GraphModelProvider or <tt>null</tt> 
+	 *  @return the GraphModelProvider or null
 	 * 	if no GraphModelProvider was found.
 	 */
 	public static GraphModelProvider getGraphModelProvider(File file) {
@@ -157,7 +157,7 @@ public class GraphModelProviderRegistry {
 	 *  at the file format class.
 	 *  
 	 *  @see GraphModelFileFormat
-	 *  @return the GraphModelFileFormat or <tt>null</tt> 
+	 *  @return the GraphModelFileFormat or null
 	 * 	if no GraphModelFileFormat was found.
 	 */
 	public static GraphModelFileFormat getGraphModelFileFormat(String filename) {
@@ -171,7 +171,7 @@ public class GraphModelProviderRegistry {
 	 *  at the file format class.
 	 *  
 	 *  @see GraphModelFileFormat
-	 *  @return the GraphModelFileFormat or <tt>null</tt> 
+	 *  @return the GraphModelFileFormat or null
 	 * 	if no GraphModelFileFormat was found.
 	 */
 	public static GraphModelFileFormat getGraphModelFileFormat(File file) {
@@ -191,7 +191,7 @@ public class GraphModelProviderRegistry {
 	 *  and compares the addresses with the == Operator.
 	 *  
 	 *  @see GraphModelFileFormat
-	 *  @return the GraphModelFileFormat or <tt>null</tt> 
+	 *  @return the GraphModelFileFormat or null
 	 * 	if no GraphModelFileFormat was found.
 	 */
 	public static GraphModelFileFormat getGraphModelFileFormat(FileFilter fileFilter) {

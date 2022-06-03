@@ -125,14 +125,14 @@ public class DefaultGraphModelFileFormatXML implements GraphModelFileFormat {
 		compZipSelect = new JCheckBox(Translator.getString("zipCompress"));
 	}
 
-	/** returns <tt>pad_xml</tt>
+	/** returns pad_xml
 	 */
 	public String getFileExtension(){
 		return "gpd";
 	}
 
 
-	/** Returns a file filter for the <tt>pad_xml</tt> extension.
+	/** Returns a file filter for the pad_xml extension.
 	 *
 	 * @see GraphModelFileFormat#getFileFilter()
 	 */

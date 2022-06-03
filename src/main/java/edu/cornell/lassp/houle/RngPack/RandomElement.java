@@ -145,8 +145,6 @@ public abstract class RandomElement extends Object {
      * generate a power-law distribution with exponent <CODE>alpha</CODE>
      * and lower cutoff
      * <CODE>cut</CODE>
-     * <CENTER>
-     * </CENTER>
      *
      *@param alpha the exponent
      *@param cut the lower cutoff

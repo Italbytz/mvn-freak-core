@@ -521,7 +521,7 @@ public class OperatorGraphFile implements Serializable {
 	 * @param model the <code>FreakGraphModel</code> (contains the environment that is needed)
 	 * @return a <code>List</code> of <code>Event</code> objects
 	 */
-	private List createEventListFor(Module m, FreakGraphModel model, Map map) {
+	private List createEventListFor(freak.core.modulesupport.Module m, FreakGraphModel model, Map map) {
 		List l = new ArrayList();
 		EventController ec = model.getOperatorGraph().getSchedule().getEventController();
 		List evts = ec.getCustomizableEventsFor(m);
@@ -571,7 +571,7 @@ public class OperatorGraphFile implements Serializable {
 	 * @param events the list of <code>Events</code> for the module
 	 * @param schedule the active <code>Schedule</code>
 	 */
-	private void restoreEvents(Module module, List events, List operatorList, ScheduleInterface schedule) {
+	private void restoreEvents(freak.core.modulesupport.Module module, List events, List operatorList, ScheduleInterface schedule) {
 		EventController ec = schedule.getEventController();
 		for (int i = 0; i < events.size(); i++) {
 			Event event = (Event)events.get(i);
