@@ -13,6 +13,7 @@ package freak.core.modulesupport;
 import freak.core.control.ScheduleInterface;
 import freak.core.graph.FreakGraphModel;
 import freak.core.graph.OperatorGraphFile;
+import freak.core.searchspace.SearchSpace;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -78,11 +79,13 @@ public class OperatorGraphCollector {
 	}
         
   /**
-   * @param path Should end with "/", but not start with one.
+   * @param genotypeSearchSpace
+   * @param path                Should end with "/", but not start with one.
    */
-  private void getResourceListing(ArrayList infos, String lookFor, String path)  {
+  private void getResourceListing(ArrayList infos, String lookFor,
+								  SearchSpace genotypeSearchSpace, String path)  {
       try {
-      URL dirURL = this.getClass().getClassLoader().getResource(path);
+      URL dirURL = genotypeSearchSpace.getClass().getClassLoader().getResource(path);
       if (dirURL != null && dirURL.getProtocol().equals("file")) {
           File[] allFiles = new File(dirURL.toURI()).listFiles(new GraphFileFilter());
 		if (allFiles != null) {
@@ -101,8 +104,8 @@ public class OperatorGraphCollector {
       } 
 
       if (dirURL == null) {
-        String me = this.getClass().getName().replace(".", "/")+".class";
-        dirURL = this.getClass().getClassLoader().getResource(me);
+        String me = genotypeSearchSpace.getClass().getName().replace(".", "/")+".class";
+        dirURL = genotypeSearchSpace.getClass().getClassLoader().getResource(me);
       }
       
       if (dirURL.getProtocol().equals("jar")) {
@@ -138,10 +141,12 @@ public class OperatorGraphCollector {
 	 */
 	public ModuleInfo[] getPredefinedGraphs(String lookFor) {
 		ArrayList infos = new ArrayList();
-                getResourceListing(infos, lookFor, "freak/module/graph/common/");
+                getResourceListing(infos, lookFor, schedule.getGenotypeSearchSpace(), "freak/module/graph/common/");
                 String searchspaceString = schedule.getGenotypeSearchSpace().getClass().getName();			
                 searchspaceString = searchspaceString.substring(searchspaceString.lastIndexOf(".") + 1).toLowerCase();
-                getResourceListing(infos, lookFor, "freak/module/graph/"+searchspaceString+"/");
+                getResourceListing(infos, lookFor,
+						schedule.getGenotypeSearchSpace(),
+						"freak/module/graph/"+searchspaceString+"/");
 		Object[] o = infos.toArray();
 		Arrays.sort(o);
 		ModuleInfo[] mi = new ModuleInfo[o.length];
