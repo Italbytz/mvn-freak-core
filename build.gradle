@@ -17,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'jdom:jdom:b9'
     implementation 'colt:colt:1.2.0'
     implementation 'org.apache-extras.beanshell:bsh:2.0b6'
 
