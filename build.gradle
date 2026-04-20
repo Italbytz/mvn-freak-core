@@ -75,6 +75,10 @@ publishing {
 }
 
 signing {
+    required { findProperty('signingKey') != null }
+    if (findProperty('signingKey')) {
+        useInMemoryPgpKeys(findProperty('signingKey') as String, findProperty('signingPassword') as String)
+    }
     sign(publishing.publications)
 }
 
